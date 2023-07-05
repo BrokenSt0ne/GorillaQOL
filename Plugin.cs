@@ -65,7 +65,6 @@ namespace GorillaQOL
         public void OnJoin(string gamemode)
         {
             inRoom = true;
-            
             GameObject.Find("Level/forest/ForestObjects/slide/Slide").GetComponent<GorillaSurfaceOverride>().overrideIndex = 61;
         }
 
