@@ -11,9 +11,10 @@ namespace GorillaQOL
     [BepInPlugin(PluginInfo.GUID, PluginInfo.Name, PluginInfo.Version)]
     public class Plugin : BaseUnityPlugin
     {
-        bool inRoom;
         private GameObject objectToEnableDisable;
-        private bool isObjectEnabled = true;
+
+        bool inRoom;
+        bool isObjectEnabled = true;
         bool keyi;
 
         void OnEnable()
