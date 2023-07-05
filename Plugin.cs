@@ -36,7 +36,7 @@ namespace GorillaQOL
             objectToEnableDisable = GameObject.Find("Global/Third Person Camera");
             if (objectToEnableDisable == null)
             {
-                Debug.LogError("they probably changed the g to an uncapital one or just changed the name of the camera, pls dm me if broken because yes -me");
+                Debug.LogError("they probably changed the g to an uncapital one or just changed the name of the camera, pls dm me if broken because yes -brokenstone");
             }
         }
 
