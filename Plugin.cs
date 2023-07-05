@@ -6,17 +6,11 @@ using Utilla;
 
 namespace GorillaQOL
 {
-    /// <summary>
-    /// This is your mod's main class.
-    /// </summary>
-
-    /* This attribute tells Utilla to look for [ModdedGameJoin] and [ModdedGameLeave] */
     [ModdedGamemode]
     [BepInDependency("org.legoandmars.gorillatag.utilla", "1.5.0")]
     [BepInPlugin(PluginInfo.GUID, PluginInfo.Name, PluginInfo.Version)]
     public class Plugin : BaseUnityPlugin
     {
-        // this code is shitty as fuck but idrc
         bool inRoom;
         private GameObject objectToEnableDisable;
         private bool isObjectEnabled = true;
@@ -24,26 +18,18 @@ namespace GorillaQOL
 
         void OnEnable()
         {
-            /* Set up your mod here */
-            /* Code here runs at the start and whenever your mod is enabled*/
-
             HarmonyPatches.ApplyHarmonyPatches();
             Utilla.Events.GameInitialized += OnGameInitialized;
         }
 
         void OnDisable()
         {
-            /* Undo mod setup here */
-            /* This provides support for toggling mods with ComputerInterface, please implement it :) */
-            /* Code here runs whenever your mod is disabled (including if it disabled on startup)*/
-
             HarmonyPatches.RemoveHarmonyPatches();
             Utilla.Events.GameInitialized -= OnGameInitialized;
         }
 
         void OnGameInitialized(object sender, EventArgs e)
         {
-            /* Code here runs after the game initializes (i.e. GorillaLocomotion.Player.Instance != null) */
             GameObject.Find("Level/lower level/mirror (1)").SetActive(true);
             GameObject.Find("Level/lower level/mirror (1)/board").SetActive(true);
             GameObject.Find("Level/lower level/mirror (1)/stand").SetActive(true);
